@@ -1,0 +1,12 @@
+{
+  "name": "naf-tutorial",
+  "version": "1.0.0",
+  "description": "multi-user virtual reality",
+  "scripts": {
+    "start": "node ./server/server.js"
+  },
+  "author": "Keebz",
+  "dependencies": {
+    "networked-aframe": "^0.2.0"
+  }
+}
