@@ -31,6 +31,11 @@
   </head>
   <body>
 
+    <audio style="display:none;" autoplay loop>
+      <source src="assets/strange.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
     <a-scene networked-scene="
       room: basic;
       debug: true;
@@ -40,7 +45,7 @@
       <a-assets>
 
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
-        <img id="sky" src="img/sunset.jpg" crossorigin="anonymous" />
+        <img id="sky" src="img/nebula.jpg" crossorigin="anonymous" />
         <img id="black" src="img/black.jpg" crossorigin="anonymous" />
         <img id="tile" src="img/tile.png" crossorigin="anonymous" />
         <a-asset-item id="gate" src="img/obj/gate.obj"></a-asset-item>
@@ -95,8 +100,8 @@
       </a-entity>
 
         <a-entity position="0 -1 0"
-        geometry="primitive: plane; width: 10; height: 10;" rotation="-90 0 0"
-        material="src: #tile; repeat: 10 10; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
+        geometry="primitive: plane; width: 100; height: 100;" rotation="-90 0 0"
+        material="src: #tile; repeat: 100 100; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
         
 
       <a-entity light="color: #ccccff; intensity: 2; type: ambient;" visible=""></a-entity>
@@ -104,7 +109,7 @@
 
       <a-sky src="#sky" rotation="0 -90 0"></a-sky>
       <a-entity id="particles" particle-system="preset: dust"></a-entity>
-      <a-entity obj-model="obj: #gate" scale="0.2 0.2 0.2" position="0 -0.9 0" material="src: #black; repeat: 100 100; transparent: true; opacity: 0.7; metalness: 0.6; roughness: 0.6"></a-entity>
+      <a-entity obj-model="obj: #gate" scale="0.2 0.2 0.2" position="0 -0.9 0" material="color: #00ffff; transparent: true; opacity: 0.5; metalness: 0.6; roughness: 0.6"></a-entity>
     </a-scene>
 
     <script>
