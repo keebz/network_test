@@ -41,26 +41,27 @@
         <img id="sky" src="img/sunset.jpg" crossorigin="anonymous" />
         <img id="black" src="img/black.jpg" crossorigin="anonymous" />
         <a-asset-item id="gate" src="img/obj/gate.obj"></a-asset-item>
-        <a-asset-item id="head" src="img/obj/head.obj"></a-asset-item>
+        <a-asset-item id="head" src="img/obj/mhead.obj"></a-asset-item>
 
         <!-- Templates -->
 
         <!-- Avatar -->
         <script id="avatar-template" type="text/html">
           <a-entity class="avatar">
-            <a-entity obj-model="obj: #head" scale="0.3 0.3 0.3" rotation="0 -180 0" position="0 0.1 0" material="color: blue; transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3" random-color></a-entity>
+            <a-entity obj-model="obj: #head" scale="0.02 0.02 0.02" rotation="0 -180 0" position="-0.2 -0.5 0" material="color: blue; transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3" random-color></a-entity>
             <!--<a-sphere class="head"
               color="#5985ff"
               scale="0.45 0.5 0.4"
               random-color
-            ></a-sphere>
-            <a-entity class="face"
+            ></a-sphere>-->
+            <!--<a-entity class="face"
               position="0 0.05 0"
             >
               <a-sphere class="eye"
                 color="#efefef"
                 position="0.16 0.1 -0.35"
                 scale="0.12 0.12 0.12"
+                material="transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3"
               >
                 <a-sphere class="pupil"
                   color="#000"
@@ -72,14 +73,15 @@
                 color="#efefef"
                 position="-0.16 0.1 -0.35"
                 scale="0.12 0.12 0.12"
+                material="transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3"
               >
                 <a-sphere class="pupil"
                   color="#000"
                   position="0 0 -1"
                   scale="0.2 0.2 0.2"
-                ></a-sphere>
+                ></a-sphere>-->
               </a-sphere>
-            </a-entity>-->
+            </a-entity>
           </a-entity>
         </script>
 
