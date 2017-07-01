@@ -18,14 +18,14 @@ AFRAME.registerComponent('mobile', {
             });
 
 
-            entityEl.setAttribute('position', {x:0, y: 1.764, z: 0});
+            entityEl.setAttribute('position', {x:0, y: 1, z: 0});
             entityEl.setAttribute('camera','camera');
 
 
             /* *** */
             var innerEl = document.createElement('a-entity');
             innerEl.setAttribute('cursor', {maxDistance: 30});
-            innerEl.setAttribute('position', {x:0, y: 0, z: -1});
+            innerEl.setAttribute('position', {x:0, y: 1, z: -1});
 
             innerEl.setAttribute('geometry', {
                 primitive: 'ring',
