@@ -5,6 +5,7 @@
     <meta name="description" content="Multi User Mobile VR">
 
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.8.5/dist/aframe-extras.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="easyrtc/easyrtc.js"></script>
     <script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
@@ -43,7 +44,7 @@
       webrtc: true;
       webrtcAudio: true;
     ">
-    <a-entity mobile></a-entity>
+    
       <a-assets>
         <a-mixin id="checkpoint"></a-mixin>
         <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
@@ -59,7 +60,9 @@
         <!-- Avatar -->
         <script id="avatar-template" type="text/html">
           <a-entity class="avatar">
-            <a-entity obj-model="obj: #head" scale="0.015 0.015 0.015" rotation="0 -180 0" position="-0.2 -0.4 -0.2" material="color: blue; transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3" random-color></a-entity>
+            <a-entity obj-model="obj: #head" scale="0.015 0.015 0.015" rotation="0 -180 0" position="-0.2 -0.4 -0.2" material="color: blue; transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3" random-color>
+              <a-entity mobile></a-entity>
+            </a-entity>
             <!--<a-sphere class="head"
               color="#5985ff"
               scale="0.45 0.5 0.4"
