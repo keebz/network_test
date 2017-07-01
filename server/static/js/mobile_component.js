@@ -45,7 +45,7 @@ AFRAME.registerComponent('mobile', {
 
             /* *** CHECKPOINTS */
 
-            const spotHeight = 0.0;
+            const spotHeight = -1;
             const teleportSpots = [
                 {x: 6, y: spotHeight, z: 0},
                 {x: -6, y: spotHeight, z: 0},
