@@ -61,7 +61,6 @@
         <script id="avatar-template" type="text/html">
           <a-entity class="avatar">
             <a-entity obj-model="obj: #head" scale="0.015 0.015 0.015" rotation="0 -180 0" position="-0.2 -0.4 -0.2" material="color: blue; transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3" random-color>
-              <a-entity mobile></a-entity>
             </a-entity>
             <!--<a-sphere class="head"
               color="#5985ff"
@@ -103,6 +102,7 @@
       </a-assets>
 
       <a-entity id="player" networked="template:#avatar-template;showLocalTemplate:false;" camera spawn-in-circle="radius:3;" wasd-controls look-controls>
+        <a-entity mobile></a-entity>
       </a-entity>
 
         <a-entity position="0 -1 0"

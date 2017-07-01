@@ -18,7 +18,7 @@ AFRAME.registerComponent('mobile', {
             });
 
 
-            entityEl.setAttribute('position', {x:0, y: 1, z: 0});
+            /*entityEl.setAttribute('position', {x:0, y: 1, z: 0});*/
             entityEl.setAttribute('camera','camera');
 
 
