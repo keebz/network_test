@@ -20,7 +20,42 @@ init: function () {
           var angleDeg = angleRad * 180 / Math.PI;
           var angleToCenter = -1 * angleDeg + 90;
           var rotationStr = '0 ' + angleToCenter + ' 0';
-          el.setAttribute('rotation', rotationStr);            
+          el.setAttribute('rotation', rotationStr);
+
+          /* Add mobile controls */
+          var scene = document.querySelector('a-scene');
+          var entityEl = document.createElement('a-entity');
+
+           entityEl.setAttribute('universal-controls', {
+              movementControls: 'checkpoint',
+            });
+
+            entityEl.setAttribute('checkpoint-controls', {
+              mode: 'animate',
+            });
+
+          entityEl.setAttribute('position', worldPoint);
+          entityEl.setAttribute('camera','camera');
+
+          /* *** */
+            var innerEl = document.createElement('a-entity');
+            innerEl.setAttribute('cursor', {maxDistance: 30});
+            innerEl.setAttribute('position', {x:0, y: 0, z: -1});
+
+            innerEl.setAttribute('geometry', {
+                primitive: 'ring',
+                radiusInner: 0.01,
+                radiusOuter: 0.015
+            });
+
+            innerEl.setAttribute('material', {
+                color: '#CCC',
+                shader: 'flat'
+            }); 
+
+            entityEl.appendChild(innerEl);
+
+            scene.appendChild(entityEl);           
 
             
         } else {
