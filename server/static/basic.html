@@ -58,10 +58,11 @@
       </a-assets>
 
       <!-- Teleports -->
-      <a-entity position="1 0 1">
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="0 -1 -5.2" color="#39BB82"></a-cylinder>
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 -1 0" color="#39BB82"></a-cylinder>
-        <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 -1 0" color="#39BB82"></a-cylinder>
+      <a-entity id="teleports" visible='true' position="0 0 2">
+        <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.01" position="0 -0.99 -5.2" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.01" position="3 -0.99 0" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.01" position="-3 -0.99 0" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.01" position="0 -0.99 -2" color="#39BB82"></a-cylinder>
       </a-entity>
 
       <!-- Player -->
@@ -70,7 +71,8 @@
           var isMobile = AFRAME.utils.device.isMobile();
           var player = document.getElementById("player");
           if (isMobile) {
-            player.setAttribute('camera', {'userHeight': '1'});
+            document.getElementById("teleports").setAttribute("visible", true);
+            player.setAttribute('camera', {'userHeight': '0'});
             player.setAttribute('universal-controls', {"movementControls": "checkpoint"});
             player.setAttribute('checkpoint-controls', {"mode": "teleport"});
             var cursor = document.createElement("a-cursor");
