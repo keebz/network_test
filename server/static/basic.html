@@ -13,22 +13,6 @@
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="js/spawn-in-circle.component.js"></script>
-    <!--<script src="js/mobile_component.js"></script>-->
-
-    <!-- -->
-    <script src="js/add/lzma.js"></script>
-    <script src="js/add/ctm.js"></script>
-    <script src="js/add/CTMLoader.js"></script>
-    <script src="js/add/aframe-teleport-controls.min.js"></script>
-    <script src="js/add/spheres_anim.js"></script>
-    <script src="js/add/anim_1.js"></script>
-    <script src="js/add/anim_2.js"></script>
-    <script src="js/add/mocap.js"></script>
-    <script src="js/add/envMapMaterial.js"></script>
-    <script src="js/add/ctm_component.js"></script>
-    <script src="js/add/mobile_component.js"></script>
-    <!-- -->
-
     <script>
       // Define custom schema for syncing avatar color, set by random-color
       var avatarSchema = {
@@ -55,8 +39,6 @@
     ">
     
       <a-assets>
-        <a-mixin id="checkpoint"></a-mixin>
-        <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
         <img id="sky" src="img/nebula.jpg" crossorigin="anonymous" />
         <img id="tile" src="img/tile.png" crossorigin="anonymous" />
@@ -64,54 +46,13 @@
         <a-asset-item id="gate" src="img/obj/gate.obj"></a-asset-item>
         <a-asset-item id="head" src="img/obj/mhead.obj"></a-asset-item>
 
-        <!-- Templates -->
-        <!-- Custom components with animations -->
-      <a-entity anim_1></a-entity>
-      
-
-
         <!-- Avatar -->
         <script id="avatar-template" type="text/html">
           <a-entity class="avatar">
             <a-entity obj-model="obj: #head" scale="0.015 0.015 0.015" rotation="0 -180 0" position="-0.2 -0.4 -0.2" material="color: blue; transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3" random-color>
             </a-entity>
-            <!--<a-sphere class="head"
-              color="#5985ff"
-              scale="0.45 0.5 0.4"
-              random-color
-            ></a-sphere>-->
-            <!--<a-entity class="face"
-              position="0 0.05 0"
-            >
-              <a-sphere class="eye"
-                color="#efefef"
-                position="0.16 0.1 -0.35"
-                scale="0.12 0.12 0.12"
-                material="transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3"
-              >
-                <a-sphere class="pupil"
-                  color="#000"
-                  position="0 0 -1"
-                  scale="0.2 0.2 0.2"
-                ></a-sphere>
-              </a-sphere>
-              <a-sphere class="eye"
-                color="#efefef"
-                position="-0.16 0.1 -0.35"
-                scale="0.12 0.12 0.12"
-                material="transparent: false; opacity: 0.7; metalness: 0.8; roughness: 0.3"
-              >
-                <a-sphere class="pupil"
-                  color="#000"
-                  position="0 0 -1"
-                  scale="0.2 0.2 0.2"
-                ></a-sphere>
-              </a-sphere>-->
-            </a-entity>
           </a-entity>
         </script>
-
-        <!-- /Templates -->
       </a-assets>
 
       <!-- Teleports -->
@@ -124,7 +65,7 @@
           var player = document.getElementById("player");
           if (isMobile) {
             player.setAttribute("spawn-in-circle", {radius: 3});
-            player.setAttribute("mobile", true);
+            player.setAttribute("wasd-controls", true);
             //player.setAttribute("camera", true);
             //var cursor = document.createElement("a-cursor");
             //document.getElementById("player").appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
