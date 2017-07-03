@@ -18,7 +18,7 @@ AFRAME.registerComponent('mobile', {
             });
 
 
-            /*entityEl.setAttribute('position', {x:0, y: 1, z: 0});*/
+            entityEl.setAttribute('position', {x:0, y: 0, z: 0});
             entityEl.setAttribute('camera','camera');
 
 
@@ -95,7 +95,7 @@ AFRAME.registerComponent('mobile', {
             var checkPointsContainer = document.createElement('a-entity'),
                 checkPointEl,
                 teleportPosition,
-                checkpointColor = '#FFFF00';
+                checkpointColor = '#00FFFF';
 
             for(var k=0; k < teleportSpots.length; k++){
                 teleportPosition = teleportSpots[k];

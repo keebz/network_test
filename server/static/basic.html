@@ -105,6 +105,7 @@
           var isMobile = AFRAME.utils.device.isMobile();
           var player = document.getElementById("player");
           if (isMobile) {
+            player.setAttribute("spawn-in-circle", {radius: 3});
             player.setAttribute("mobile", true);
             //var cursor = document.createElement("a-cursor");
             //document.getElementById("player").appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
