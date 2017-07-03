@@ -76,7 +76,16 @@
             player.setAttribute('universal-controls', {"movementControls": "checkpoint"});
             player.setAttribute('checkpoint-controls', {"mode": "teleport"});
             var cursor = document.createElement("a-cursor");
+            var anicursor = document.createElement("a-animation");
             cursor.setAttribute('fuse',true);
+            cursor.setAttribute("geometry",{'primitive':'ring','radiusInner':0.01, 'radiusOuter': 0.015});
+            anicursor.setAttribute("begin",'cursor-fusing');
+            anicursor.setAttribute("easing",'ease-in');
+            anicursor.setAttribute('attribute','scale');
+            anicursor.setAttribute('fill','backwards');
+            anicursor.setAttribute('from','1 1 1');
+            anicursor.setAttribute('to','0.1 0.1 0.1');
+            cursor.appendChild(anicursor);
             player.appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
           } else {
           player.setAttribute("spawn-in-circle", {radius: 3});
