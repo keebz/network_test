@@ -107,8 +107,9 @@
           if (isMobile) {
             player.setAttribute("spawn-in-circle", {radius: 3});
             player.setAttribute("wasd-controls", true);
-            player.setAttribute("look-controls", true);;
-            player.setAttribute("mobile", true);
+            player.setAttribute("look-controls", true);
+            player.setAttribute("camera", true);
+            //player.setAttribute("mobile", true);
             //player.setAttribute("camera", true);
             //var cursor = document.createElement("a-cursor");
             //document.getElementById("player").appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
@@ -117,7 +118,7 @@
           player.setAttribute("spawn-in-circle", {radius: 3});
           player.setAttribute("camera", true);
           player.setAttribute("wasd-controls", true);
-          player.setAttribute("look-controls", true);;
+          player.setAttribute("look-controls", true);
           }
         </script>
       </a-entity>
