@@ -70,9 +70,9 @@
           var isMobile = AFRAME.utils.device.isMobile();
           var player = document.getElementById("player");
           if (isMobile) {
-            player.setAttribute('camera', {'userHeight': '1.6'});
+            player.setAttribute('camera', {'userHeight': '1'});
             player.setAttribute('universal-controls', {"movementControls": "checkpoint"});
-            player.setAttribute('checkpoint-controls', {"mode": "animate"});
+            player.setAttribute('checkpoint-controls', {"mode": "teleport"});
             var cursor = document.createElement("a-cursor");
             player.appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
           } else {
