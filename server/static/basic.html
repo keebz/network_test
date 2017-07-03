@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="js/spawn-in-circle.component.js"></script>
+    <script src="js/mobile_component.js"></script>
 
     <script>
       // Define custom schema for syncing avatar color, set by random-color
@@ -40,6 +41,8 @@
     ">
     
       <a-assets>
+        <a-mixin id="checkpoint"></a-mixin>
+        <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
         <img id="sky" src="img/nebula.jpg" crossorigin="anonymous" />
         <img id="tile" src="img/tile.png" crossorigin="anonymous" />
@@ -97,17 +100,28 @@
 
 
       <!-- Player -->
-      <a-entity id="player" networked="template:#avatar-template;showLocalTemplate:false;" camera spawn-in-circle="radius:3;" wasd-controls look-controls>
+      <a-entity id="player" networked="template:#avatar-template;showLocalTemplate:false;">
         <script>
           var isMobile = AFRAME.utils.device.isMobile();
+          var player = document.getElementById("player");
           if (isMobile) {
-            var cursor = document.createElement("a-cursor");
-            document.getElementById("player").appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
-            document.getElementById("teleport").setAttribute("visible","true");
+            player.setAttribute("mobile", true);
+            //var cursor = document.createElement("a-cursor");
+            //document.getElementById("player").appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
+            //document.getElementById("teleport").setAttribute("visible","true");
+          } else {
+            player.setAttribute("spawn-in-circle", {radius: 3});
+            player.setAttribute("camera", true);
+            player.setAttribute("wasd-controls", true);
+            player.setAttribute("look-controls", true);  
           }
         </script>
 
-      </a-entity>
+
+
+
+
+      <!--</a-entity>
       
       <!--<script>
         var isMobile = AFRAME.utils.device.isMobile();
