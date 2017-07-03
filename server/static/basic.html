@@ -13,7 +13,21 @@
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="js/spawn-in-circle.component.js"></script>
-    <script src="js/mobile_component.js"></script>
+    <!--<script src="js/mobile_component.js"></script>-->
+
+    <!-- -->
+    <script src="js/add/lzma.js"></script>
+    <script src="js/add/ctm.js"></script>
+    <script src="js/add/CTMLoader.js"></script>
+    <script src="js/add/aframe-teleport-controls.min.js"></script>
+    <script src="js/add/spheres_anim.js"></script>
+    <script src="js/add/anim_1.js"></script>
+    <script src="js/add/anim_2.js"></script>
+    <script src="js/add/mocap.js"></script>
+    <script src="js/add/envMapMaterial.js"></script>
+    <script src="js/add/ctm_component.js"></script>
+    <script src="js/add/mobile_component.js"></script>
+    <!-- -->
 
     <script>
       // Define custom schema for syncing avatar color, set by random-color
@@ -51,6 +65,10 @@
         <a-asset-item id="head" src="img/obj/mhead.obj"></a-asset-item>
 
         <!-- Templates -->
+        <!-- Custom components with animations -->
+      <a-entity anim_1></a-entity>
+      
+
 
         <!-- Avatar -->
         <script id="avatar-template" type="text/html">
@@ -106,10 +124,7 @@
           var player = document.getElementById("player");
           if (isMobile) {
             player.setAttribute("spawn-in-circle", {radius: 3});
-            player.setAttribute("wasd-controls", true);
-            player.setAttribute("look-controls", true);
-            player.setAttribute("camera", true);
-            //player.setAttribute("mobile", true);
+            player.setAttribute("mobile", true);
             //player.setAttribute("camera", true);
             //var cursor = document.createElement("a-cursor");
             //document.getElementById("player").appendChild(cursor).setAttribute("material", {"color": "#00ffff", "shader": "flat"});
